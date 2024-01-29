@@ -124,11 +124,21 @@ prepare_housing_data <- function(
         wuppertal_data
     )
 
+    # add indicator for missing geo coordinate
+    combined_data <- combined_data |>
+        dplyr::mutate(
+            missing_geo = dplyr::case_when(
+                lon_utm == -9 | lat_utm == -9 ~ 1,
+                TRUE ~ 0
+            )
+        )
+
     # drop geometry
     combined_data <- sf::st_drop_geometry(combined_data)
 
     #----------------------------------------------
     # remove spatial information at individual level
+    # replace Umlaute
 
     combined_data <- combined_data |>
         dplyr::select(
@@ -148,8 +158,11 @@ prepare_housing_data <- function(
                 "merge_gid",
                 "is24_stadt_kreis"
             )
+        ) |>
+        dplyr::mutate(
+            city_district = stringi::stri_trans_general(city_district, "de-ASCII; Latin-ASCII")
         )
-
+    
     #----------------------------------------------
     # export
 
@@ -160,7 +173,9 @@ prepare_housing_data <- function(
             "processed_data",
             "housing_data",
             paste0(substring(housing_file, 1, 2), "_prepared.csv")
-        )
+        ),
+        na = NA,
+        sep = ";"
     )
 
     #----------------------------------------------
