@@ -1,7 +1,7 @@
 # RWI-GEO-RED Sonderauswertung für Wuppertal Institut für Klima, Umwelt und Energie
 
-Author: Patrick Thiel
-Start date: 29/01/2024
+- Author: Patrick Thiel
+- Start date: 29/01/2024
 
 ## Task:
 
