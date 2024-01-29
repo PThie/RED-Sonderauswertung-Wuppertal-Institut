@@ -3,6 +3,7 @@
 
 suppressPackageStartupMessages({
     library(targets)
+    library(tarchetypes)
     library(here)
     library(sf)
     library(qs)
