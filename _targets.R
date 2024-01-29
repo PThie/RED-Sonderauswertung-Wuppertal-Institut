@@ -4,6 +4,9 @@
 suppressPackageStartupMessages({
     library(targets)
     library(here)
+    library(sf)
+    library(qs)
+    library(docstring)
 })
 
 #----------------------------------------------
@@ -37,12 +40,32 @@ lapply(
 )
 
 #----------------------------------------------
+# define globals
+
+utmcrs = 32632
+
+#----------------------------------------------
 # processing steps
+
+targets_preparation <- rlang::list2(
+    tar_qs(
+        prepared_mannheim_districts,
+        prepare_mannheim_districts(
+            utmcrs = utmcrs
+        )
+    ),
+    tar_qs(
+        prepared_wuppertal_districts,
+        prepare_wuppertal_districts(
+            utmcrs = utmcrs
+        )
+    )
+)
 
 
 #----------------------------------------------
 # combine all
 
 rlang::list2(
-
+    targets_preparation
 )
