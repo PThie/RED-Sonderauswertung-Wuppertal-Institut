@@ -1,6 +1,9 @@
 prepare_wuppertal_districts <- function(utmcrs = NA) {
     #' @title Preparation of city districts of Wuppertal
     #' 
+    #' @description This function prepares the city districts of Wuppertal. The
+    #' information was provided by the Wuppertal Institute.
+    #' 
     #' @param utmcrs UTM (32632) projection
     #' 
     #' @return Spatial Dataframe with city districts

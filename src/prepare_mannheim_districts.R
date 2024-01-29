@@ -1,6 +1,9 @@
 prepare_mannheim_districts <- function(utmcrs = NA) {
     #' @title Preparation of city districts of Mannheim
     #' 
+    #' @description This function prepares the city districts of Mannheim. The
+    #' information was provided by the Wuppertal Institute.
+    #' 
     #' @param utmcrs UTM (32632) projection
     #' 
     #' @return Spatial Dataframe with city districts
