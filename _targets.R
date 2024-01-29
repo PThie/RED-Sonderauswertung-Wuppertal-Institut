@@ -8,6 +8,7 @@ suppressPackageStartupMessages({
     library(sf)
     library(qs)
     library(docstring)
+    library(rlang)
 })
 
 #----------------------------------------------
@@ -43,12 +44,27 @@ lapply(
 #----------------------------------------------
 # define globals
 
-utmcrs = 32632
+utmcrs <- 32632
+red_version <- "v9"
+
+#----------------------------------------------
+# data frame for loop through the housing data
+
+housing_data_info <- data.frame(
+    cbind(
+        housing_type = c("HM")
+    )
+) |>
+    dplyr::mutate(
+        housing_type_file_name = paste0(housing_type, "_allVersions_ohneText")
+    )
 
 #----------------------------------------------
 # processing steps
 
-targets_preparation <- rlang::list2(
+# Preparation of the provided geographical data
+targets_preparation_geo <- rlang::list2(
+    #----------------------------------------------
     tar_qs(
         prepared_mannheim_districts,
         prepare_mannheim_districts(
@@ -69,10 +85,27 @@ targets_preparation <- rlang::list2(
     )
 )
 
+# Preparation of the housing data
+targets_preparation_housing <- tar_map(
+    tar_qs(
+        housing_data,
+        prepare_housing_data(
+            utmcrs = utmcrs,
+            housing_file = housing_type_file_name,
+            red_version = red_version,
+            prepared_mannheim_districts = prepared_mannheim_districts,
+            prepared_wuppertal_districts = prepared_wuppertal_districts,
+            prepared_historic_buildings = prepared_historic_buildings
+        )
+    ),
+    values = housing_data_info,
+    names = housing_type
+)
 
 #----------------------------------------------
 # combine all
 
 rlang::list2(
-    targets_preparation
+    targets_preparation_geo,
+    targets_preparation_housing
 )
