@@ -60,6 +60,12 @@ targets_preparation <- rlang::list2(
         prepare_wuppertal_districts(
             utmcrs = utmcrs
         )
+    ),
+    tar_qs(
+        prepared_historic_buildings,
+        prepare_historic_buildings(
+            utmcrs = utmcrs
+        )
     )
 )
 
