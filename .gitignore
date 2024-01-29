@@ -4,3 +4,7 @@ output
 run.R
 run.sh
 src/helpers/config.R
+_targets/meta/
+_targets/user
+_targets/.gitignore
+_targets/
