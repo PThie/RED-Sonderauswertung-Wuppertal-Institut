@@ -54,7 +54,7 @@ red_version <- "v9"
 
 housing_data_info <- data.frame(
     cbind(
-        housing_type = c("HM")
+        housing_type = c("HM", "HK", "WM", "WK"),
     )
 ) |>
     dplyr::mutate(
