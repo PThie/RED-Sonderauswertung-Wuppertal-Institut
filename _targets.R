@@ -7,6 +7,8 @@ suppressPackageStartupMessages({
     library(here)
     library(sf)
     library(qs)
+    library(data.table)
+    library(stringi)
     library(docstring)
     library(rlang)
 })
