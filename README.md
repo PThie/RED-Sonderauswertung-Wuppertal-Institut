@@ -21,9 +21,19 @@
 
 | Variable  | Description                         |
 | --------- | ----------------------------------- |
-| city_name | Indicator for the cities in the sample (Mannheim, Wuppertal) |
-| city_district | Name of the corresponding city district<br>Refers to "Stadtteile" in the case of Mannheim (original variable labelled as "name") and "Quartiere" in the case of Wuppertal (original variable labelled as "NAME") |
-| city_district_id | 
+| city_name | Indicator for the cities in the sample (Mannheim, Wuppertal). |
+| city_district | Name of the corresponding city district.<br>Refers to "Stadtteile" in the case of Mannheim (original variable labelled as "name") and "Quartiere" in the case of Wuppertal (original variable labelled as "NAME"). |
+| city_district_id | Identifier for the corresponding city district.<br>Original variable is labelled as "id" for Mannheim and as "QUARTIER" for Wuppertal. |
+| historic_building_id | Identifier for historic buildings in Wuppertal.<br>The variable is a combination of the following original variables: UUID, url_nr, X_impBEZEIC, X_impSTRASS, X_impUMFANG where "url_nr" is the numeric part of the reference URL. |
+
+
+<!--
+## DOI
+
+Placeholder:
+[![DOI:<your number>](http://img.shields.io/badge/DOI-<your number>-048BC0.svg)](<doi link>)
+
+-->
 
 ## Disclaimer
 
