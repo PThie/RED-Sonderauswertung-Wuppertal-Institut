@@ -94,26 +94,16 @@ prepare_housing_data <- function(
     #----------------------------------------------
     # add historic buildings by nearest neighbor
 
-    nearest_buildings <- sf::st_nearest_feature(
+    wuppertal_data <- sf::st_join(
         wuppertal_data,
-        prepared_historic_buildings
+        prepared_historic_buildings,
+        left = TRUE
     )
 
-    # assign nearest building to housing data
-    prepared_historic_buildings_df <- sf::st_drop_geometry(
-        prepared_historic_buildings
-    )
-
-    # add ID of nearest historic building
-    # add distance to nearest historic building
-    wuppertal_data <- wuppertal_data |>
+    # add historic ID to mannheim data as well
+    mannheim_data <- mannheim_data |>
         dplyr::mutate(
-            nearest_historic_building_id = prepared_historic_buildings_df[nearest_buildings, ],
-            distance_nearest_historic_building = as.numeric(sf::st_distance(
-                wuppertal_data,
-                prepared_historic_buildings[nearest_buildings, ],
-                by_element = TRUE
-            ))
+            historic_building_id = NA_character_
         )
 
     #----------------------------------------------
