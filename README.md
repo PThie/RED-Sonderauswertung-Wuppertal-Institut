@@ -16,3 +16,7 @@
 - Note: The data sets on sales already include such a variable. However, the data sets on rents do not have such a variable.
     - Add the information to the sales data set as well and see how good both metrics compare.
 - This analysis is only required for the city of Wuppertal.
+
+## Disclaimer
+
+All rights reserved to RWI Essen and to the author of the code, Patrick Thiel.
