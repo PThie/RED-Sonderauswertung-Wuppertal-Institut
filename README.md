@@ -17,6 +17,12 @@
     - Add the information to the sales data set as well and see how good both metrics compare.
 - This analysis is only required for the city of Wuppertal.
 
+## Description for the new variables
+
+| Variable  | Description                         |
+| --------- | ----------------------------------- |
+| city_name | Indicator for the cities in the sample (Mannheim, Wuppertal) |
+
 ## Disclaimer
 
 All rights reserved to RWI Essen and to the author of the code, Patrick Thiel.
