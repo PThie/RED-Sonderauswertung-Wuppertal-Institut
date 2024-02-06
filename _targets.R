@@ -9,8 +9,10 @@ suppressPackageStartupMessages({
     library(qs)
     library(data.table)
     library(stringi)
+    library(stringr)
     library(docstring)
     library(rlang)
+    library(dplyr)
 })
 
 #----------------------------------------------
