@@ -22,6 +22,8 @@
 | Variable  | Description                         |
 | --------- | ----------------------------------- |
 | city_name | Indicator for the cities in the sample (Mannheim, Wuppertal) |
+| city_district | Name of the corresponding city district<br>Refers to "Stadtteile" in the case of Mannheim (original variable labelled as "name") and "Quartiere" in the case of Wuppertal (original variable labelled as "NAME") |
+| city_district_id | 
 
 ## Disclaimer
 
