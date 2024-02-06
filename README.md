@@ -26,6 +26,10 @@
 | city_district_id | Identifier for the corresponding city district.<br>Original variable is labelled as "id" for Mannheim and as "QUARTIER" for Wuppertal. |
 | historic_building_id | Identifier for historic buildings in Wuppertal.<br>The variable is a combination of the following original variables: UUID, url_nr, X_impBEZEIC, X_impSTRASS, X_impUMFANG where "url_nr" is the numeric part of the reference URL. |
 
+## Additional information
+
+- [General information on RWI-GEO-RED](https://www.rwi-essen.de/forschung-beratung/weitere/forschungsdatenzentrum-ruhr/datenangebot/rwi-geo-red-real-estate-data)
+- [Data report RWI-GEO-RED v9](https://www.rwi-essen.de/fileadmin/user_upload/RWI/FDZ/Datenbeschreibung-REDv9.pdf)
 
 <!--
 ## DOI
