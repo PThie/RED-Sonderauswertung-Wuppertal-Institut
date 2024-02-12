@@ -133,6 +133,7 @@ prepare_housing_data <- function(
     combined_data <- combined_data |>
         dplyr::select(
             -c(
+                "ergg_1km",
                 "lon_utm",
                 "lat_utm",
                 "geox",
