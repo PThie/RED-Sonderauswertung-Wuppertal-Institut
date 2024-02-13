@@ -1,4 +1,10 @@
 #----------------------------------------------
+# description
+
+# This file is main file that orchestrates the other coding files. It controls
+# the data pipeline and defines global settings.
+
+#----------------------------------------------
 # load libraries
 
 suppressPackageStartupMessages({
@@ -48,7 +54,7 @@ lapply(
 #----------------------------------------------
 # define globals
 
-utmcrs <- 32632
+utmcrs <- 32632 # refers to WGS 84 / UTM zone 32N (https://epsg.io/32632)
 red_version <- "v9"
 
 #----------------------------------------------
