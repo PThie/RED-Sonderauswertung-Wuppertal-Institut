@@ -3,6 +3,10 @@
 - Author: Patrick Thiel
 - Start date: 29/01/2024
 
+## Aim
+
+The goal of this special evaluation is to add additional variables to the housing data (RWI-GEO-RED). The new information includes districts and historic buildings for the cities of Mannheim and Wuppertal.
+
 ## Task:
 
 ### Regional restriction
