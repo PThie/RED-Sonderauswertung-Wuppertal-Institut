@@ -8,6 +8,7 @@
 # load libraries
 
 suppressPackageStartupMessages({
+    library(renv)
     library(targets)
     library(tarchetypes)
     library(here)
