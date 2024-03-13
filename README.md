@@ -39,7 +39,7 @@ The goal of this special evaluation is to add additional variables to the housin
 
 ## DOI
 
-[![DOI:10.5281/zenodo.10812938](http://img.shields.io/badge/DOI-10.5281/zenodo.10812938-048BC0.svg)](https://zenodo.org/account/settings/github/repository/PThie/RED-Sonderauswertung-Wuppertal-Institut)
+- Repository v1.0.0: [![DOI:10.5281/zenodo.10812938](http://img.shields.io/badge/DOI-10.5281/zenodo.10812938-048BC0.svg)](https://zenodo.org/account/settings/github/repository/PThie/RED-Sonderauswertung-Wuppertal-Institut)
 
 
 ## Disclaimer
