@@ -36,13 +36,11 @@ The goal of this special evaluation is to add additional variables to the housin
 - [General information on RWI-GEO-RED](https://www.rwi-essen.de/forschung-beratung/weitere/forschungsdatenzentrum-ruhr/datenangebot/rwi-geo-red-real-estate-data)
 - [Data report RWI-GEO-RED v9](https://www.rwi-essen.de/fileadmin/user_upload/RWI/FDZ/Datenbeschreibung-REDv9.pdf)
 
-<!--
+
 ## DOI
 
-Placeholder:
-[![DOI:<your number>](http://img.shields.io/badge/DOI-<your number>-048BC0.svg)](<doi link>)
+[![DOI:10.5281/zenodo.10812938](http://img.shields.io/badge/DOI-10.5281/zenodo.10812938-048BC0.svg)](https://zenodo.org/account/settings/github/repository/PThie/RED-Sonderauswertung-Wuppertal-Institut)
 
--->
 
 ## Disclaimer
 
