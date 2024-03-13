@@ -9,3 +9,4 @@ _targets/user
 _targets/.gitignore
 _targets/
 renv
+documentation
