@@ -20,6 +20,7 @@ suppressPackageStartupMessages({
     library(docstring)
     library(rlang)
     library(dplyr)
+    library(haven)
 })
 
 #----------------------------------------------
