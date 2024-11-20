@@ -10,3 +10,4 @@ _targets/.gitignore
 _targets/
 renv
 documentation
+.Rprofile
