@@ -50,6 +50,42 @@ prepare_housing_data <- function(
             )
         )
 
+    housing_data_prep_export <- housing_data_prep |>
+        dplyr::select(
+            -c(
+                "ergg_1km",
+                "lon_utm",
+                "lat_utm",
+                "lat_gps",
+                "lon_gps",
+                "geox",
+                "geoy",
+                "strasse",
+                "ort",
+                "hausnr",
+                "koid",
+                "laid",
+                "skid_id",
+                "sc_id",
+                "ident",
+                "merge_gid",
+                "is24_stadt_kreis"
+            )
+        )
+
+    # exporting raw data
+    data.table::fwrite(
+        housing_data_prep_export,
+        file.path(
+            paths()[["data_path"]],
+            "processed_data",
+            "housing_data",
+            paste0(substring(housing_file, 1, 2), "_raw.csv")
+        ),
+        na = NA,
+        sep = ";"
+    )
+
     #----------------------------------------------
     # add additional regional information
 
