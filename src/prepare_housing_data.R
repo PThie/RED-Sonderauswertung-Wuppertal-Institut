@@ -128,21 +128,6 @@ prepare_housing_data <- function(
     )
 
     #----------------------------------------------
-    # add historic buildings by nearest neighbor
-
-    wuppertal_data <- sf::st_join(
-        wuppertal_data,
-        prepared_historic_buildings,
-        left = TRUE
-    )
-
-    # add historic ID to mannheim data as well
-    mannheim_data <- mannheim_data |>
-        dplyr::mutate(
-            historic_building_id = NA_character_
-        )
-
-    #----------------------------------------------
     # combine data again
 
     combined_data <- dplyr::bind_rows(
@@ -159,6 +144,73 @@ prepare_housing_data <- function(
             )
         )
 
+    # drop geometry
+    combined_data <- sf::st_drop_geometry(combined_data)
+    
+    # export data with city districts
+    data.table::fwrite(
+        combined_data |>
+            dplyr::select(
+              -c(
+                "ergg_1km",
+                "lon_utm",
+                "lat_utm",
+                "geox",
+                "geoy",
+                "strasse",
+                "ort",
+                "hausnr",
+                "koid",
+                "laid",
+                "skid_id",
+                "sc_id",
+                "ident",
+                "merge_gid",
+                "is24_stadt_kreis"
+              )
+            ) |>
+            dplyr::mutate(
+              city_district = stringi::stri_trans_general(city_district, "de-ASCII; Latin-ASCII")
+            ),
+        file.path(
+            paths()[["data_path"]],
+            "processed_data",
+            "housing_data",
+            paste0(substring(housing_file, 1, 2), "_city_districts.csv")
+        ),
+        na = NA,
+        sep = ";"
+    )
+    
+    #----------------------------------------------
+    # add historic buildings by nearest neighbor
+    
+    wuppertal_data <- sf::st_join(
+        wuppertal_data,
+        prepared_historic_buildings,
+        left = TRUE
+    )
+
+    # add historic ID to mannheim data as well
+    mannheim_data <- mannheim_data |>
+        dplyr::mutate(
+            historic_building_id = NA_character_
+        )
+    
+    combined_data <- dplyr::bind_rows(
+        mannheim_data,
+        wuppertal_data
+    )
+    
+    # add indicator for missing geo coordinate
+    combined_data <- combined_data |>
+        dplyr::mutate(
+            missing_geo = dplyr::case_when(
+              lon_utm == -9 | lat_utm == -9 ~ 1,
+              TRUE ~ 0
+            )
+        )
+    
     # drop geometry
     combined_data <- sf::st_drop_geometry(combined_data)
 
